@@ -1,0 +1,9 @@
+{
+  "name": "@dooz/prettier-config",
+  "version": "1.0.0",
+  "description": "Prettier configruration",
+  "main": "index.json",
+  "repository": "git@github.com:danielbeutner/prettier-config.git",
+  "author": "Daniel Beutner <daniel@beutner.dev>",
+  "license": "MIT"
+}
