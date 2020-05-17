@@ -1,0 +1,26 @@
+name: Release and publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - name: Publish packages to npm
+        run: |
+          git config --global user.name 'Daniel Beutner'
+          git config --global user.email 'daniel@beunter.dev'
+          npm run release
+          git push --follow-tags origin master
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

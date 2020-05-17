@@ -11,6 +11,7 @@ npm i -D @dooz/prettier-config
 ```
 
 Add to package.json:
+
 ```json
 {
   "prettier": "@dooz/prettier-config"
